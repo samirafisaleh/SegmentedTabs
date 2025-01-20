@@ -15,7 +15,7 @@ class MainTabBarController: UITabBarController {
         return view
     }()
     
-    private var iconlist: [String] = [
+    private let icons: [String] = [
                                 "house.lodge.fill",
                                 "house.lodge.fill"
     ]
@@ -52,14 +52,14 @@ class MainTabBarController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        InitializeTab(color: .tintColor)
+        InitializeTab()
     }
 
     
     /*************************************************************************
      *
      ************************************************************************/
-    public func InitializeTab(color: UIColor) {
+    public func InitializeTab() {
         
         // Only continue if this variable is currently false
         guard isInitialized == false else {
@@ -68,8 +68,8 @@ class MainTabBarController: UITabBarController {
 
         segmentTabBarView.frame = self.tabBar.frame
         segmentTabBarView.delegate = self
-        segmentTabBarView.ReplaceSegments(segments: iconlist)
-        segmentTabBarView.SetColor(color: color)
+        segmentTabBarView.ReplaceSegments(segments: icons)
+        segmentTabBarView.SetColor(color: .tintColor)
 
         segmentTabBarView.SelectIndex(index: 0)
         self.view.addSubview(segmentTabBarView)
