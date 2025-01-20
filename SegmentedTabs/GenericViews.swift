@@ -82,7 +82,7 @@ class SegmentTabBarView: UIView {
     func ReplaceSegments(segments : [String]) {
         segmentcontrol.replaceSegmentsSystemImages(segments: segments)
     }
-
+    
     /*************************************************************************
      *
      ************************************************************************/
